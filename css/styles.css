@@ -197,3 +197,41 @@ img {
     border-radius: 12px;
     max-width: 100%;
 }
+
+
+
+/* ==========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Pantallas móviles (menos de 768px) */
+@media (max-width: 768px) {
+    .navegacion-principal {
+        flex-direction: column; /* Apila los botones de navegación */
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navegacion-principal a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        height: 350px;
+        padding: 2rem;
+    }
+
+    .contenido-hero h2 {
+        font-size: 2.4rem;
+    }
+
+    .contacto {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
