@@ -1,27 +1,59 @@
-// Variable y función requerida por el docente
+// ==========================================
+// 1. VARIABLES Y FUNCIONES DE CONTROL (DOCENTE)
+// ==========================================
 let numButtonClicks = 0;
 
 function buttonClicked() {
     numButtonClicks = numButtonClicks + 1;
-    document.getElementById("mainDiv").textContent =
-        "Button Clicked times: " + numButtonClicks;
+    
+    const contenedorMensaje = document.getElementById("mainDiv");
+    if (contenedorMensaje) {
+        contenedorMensaje.textContent = "Button Clicked times: " + numButtonClicks;
+    }
 }
 
-// Control del envío del formulario
+// ==========================================
+// 2. GESTIÓN DEL EVENTO DOM Y VALIDACIONES
+// ==========================================
 document.addEventListener("DOMContentLoaded", function() {
+    
     const formulario = document.getElementById("formContacto");
 
     if (formulario) {
+
         formulario.addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que la página se recargue
+            // Previene el envío inmediato para validar
+            event.preventDefault();
 
-            // Ejecuta el contador del profesor
+            // Captura y limpia espacios al inicio/final de las entradas
+            const nombre = document.getElementById("nombre")?.value.trim();
+            const telefono = document.getElementById("telefono")?.value.trim();
+            const correo = document.getElementById("correo")?.value.trim();
+            const mensaje = document.getElementById("mensaje")?.value.trim();
+
+            // 1. Validación de campos vacíos
+            if (!nombre || !telefono || !correo || !mensaje) {
+                alert("Por favor, llena todos los campos. No se permiten entradas vacías.");
+                return;
+            }
+
+            // 2. Validación estricta de sólo letras y espacios para el Nombre
+            const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+            if (!regexSoloLetras.test(nombre)) {
+                alert("El campo Nombre debe contener únicamente letras.");
+                return;
+            }
+
+            // 3. Validación estricta de sólo números para el Teléfono
+            const regexSoloNumeros = /^[0-9]+$/;
+            if (!regexSoloNumeros.test(telefono)) {
+                alert("El campo Teléfono debe contener únicamente números.");
+                return;
+            }
+
+            // Si todas las validaciones pasan con éxito:
             buttonClicked();
-
-            // Mensaje de éxito al usuario
-            alert("¡Gracias por contactarte! Tu mensaje ha sido enviado correctamente.");
-            
-            // Limpia los campos del formulario
+            alert("¡Gracias por contactarte, " + nombre + "! Tu mensaje ha sido enviado correctamente.");
             formulario.reset();
         });
     }

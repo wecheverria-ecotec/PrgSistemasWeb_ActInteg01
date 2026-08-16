@@ -62,19 +62,23 @@
                 Por favor completa tus datos y da clic en enviar.
             </div>
 
-            <!-- Formulario de interacción con validaciones HTML5 -->
+            <!-- Formulario de interacción con validaciones y restricciones estrictas HTML5 -->
             <form id="formContacto">
+                
                 <label for="nombre">Nombre:</label>
-                <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre" minlength="3" maxlength="30">
+                <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre" 
+                       minlength="3" maxlength="30" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" 
+                       title="Ingresa solo letras y espacios">
 
                 <label for="telefono">Teléfono:</label>    
-                <input placeholder="0999999999" type="tel" name="telefono" id="telefono" minlength="7" maxlength="10">
+                <input placeholder="0999999999" required type="text" name="telefono" id="telefono" 
+                       minlength="7" maxlength="10" pattern="[0-9]+" title="Ingresa solo números (ej. 0999999999)">
 
                 <label for="correo">Correo:</label>
                 <input placeholder="correo@ejemplo.com" required type="email" name="email" id="correo">
 
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="200"></textarea>  
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required minlength="5" maxlength="200"></textarea>  
 
                 <button type="submit" id="btnEnviar">Enviar</button>    
             </form>
