@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Programación en Sistemas Web</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1 class="titulo">
+           WILMER ECHEVERRÍA
+            <span>Programador & Desarrollador Web</span>
+        </h1>
+    </header>
+
+    <!-- Menú de navegación -->
+    <div class="nav-bg">
+        <nav class="navegacion-principal">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <div class="contenido-hero">
+            <h2>Diseño y Desarrollo Web <span>Freelancer</span></h2>
+            <div class="ubicacion">
+                <p>Guayaquil - Ecuador</p>
+            </div>
+            <a class="boton" href="#contacto">Contactar</a>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre">
+
+            <label for="telefono">Teléfono:</label>    
+            <input placeholder="0999999999" type="tel" name="telefono" id="telefono">
+
+            <label for="correo">Correo:</label>
+            <input placeholder="correo@ejemplo.com" required type="email" name="email" id="email">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..."></textarea>  
+
+            <button type="submit">Enviar</button>    
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 WILMER ECHEVERRÍA - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
