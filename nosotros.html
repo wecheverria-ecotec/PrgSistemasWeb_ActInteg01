@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración de caracteres y adaptabilidad en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mí - Wilmer Echeverría</title>
+
+    <!-- Carga de la tipografía principal desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Optimización y vinculación de la hoja de estilos CSS -->
+    <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
+    <!-- ==========================================
+         1. ENCABEZADO PRINCIPAL (HEADER)
+         ========================================== -->
     <header>
         <h1 class="titulo">
             WILMER ECHEVERRÍA
@@ -16,30 +26,44 @@
         </h1>
     </header>
 
+    <!-- ==========================================
+         2. NAVEGACIÓN PRINCIPAL
+         ========================================== -->
     <div class="nav-bg">
-        <nav class="navegacion-principal">
+        <nav class="navegacion-principal contenedor">
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Sobre mí</a>
             <a href="index.html#contacto">Contacto</a>
         </nav>
     </div>
 
-    <main class="contacto">
-        <h2>Sobre Mí</h2>
-        <p>¡Hola! Soy estudiante de Programación en Sistemas Web. Me apasiona el desarrollo de software y la creación de interfaces web atractivas.</p>
-        
-        <h3>Mis Habilidades</h3>
-        <ul>
-            <li>Desarrollo Frontend (HTML5, CSS3, JavaScript)</li>
-            <li>Control de Versiones con Git y GitHub</li>
-            <li>Diseño Responsivo</li>
-        </ul>
+    <!-- ==========================================
+         3. CONTENIDO PRINCIPAL (MAIN)
+         ========================================== -->
+    <main class="contenedor">
+        <!-- Tarjeta de información personal -->
+        <section class="contacto">
+            <h2>Sobre Mí</h2>
+            <p>¡Hola! Soy estudiante de Programación en Sistemas Web. Me apasiona el desarrollo de software y la creación de interfaces web atractivas, funcionales y adaptables a cualquier dispositivo.</p>
+            
+            <h3>Mis Habilidades</h3>
+            <!-- Lista adaptada dinámicamente mediante las cápsulas CSS -->
+            <ul>
+                <li>Desarrollo Frontend (HTML5, CSS3, JavaScript)</li>
+                <li>Control de Versiones con Git y GitHub</li>
+                <li>Diseño Responsivo</li>
+            </ul>
+        </section>
     </main>
 
+    <!-- ==========================================
+         4. PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="footer">
         <p>&copy; 2026 WILMER ECHEVERRÍA - Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Script de interacción JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
