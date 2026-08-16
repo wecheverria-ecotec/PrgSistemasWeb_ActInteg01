@@ -44,22 +44,29 @@
     </section>
 
     <!-- Formulario de contacto -->
+<!-- Formulario de contacto -->
     <section id="contacto" class="contacto">
         <h2>Contacto</h2>
-        <form>
+
+        <!-- Espacio para el contador de clics del profesor -->
+        <div id="mainDiv" style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: bold; color: var(--primario);">
+            Por favor completa tus datos y da clic en en enviar!
+        </div>
+
+        <form id="formContacto">
             <label for="nombre">Nombre:</label>
-            <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre">
+            <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre" minlength="3" maxlength="30">
 
             <label for="telefono">Teléfono:</label>    
-            <input placeholder="0999999999" type="tel" name="telefono" id="telefono">
+            <input placeholder="0999999999" type="tel" name="telefono" id="telefono" minlength="7" maxlength="10">
 
             <label for="correo">Correo:</label>
             <input placeholder="correo@ejemplo.com" required type="email" name="email" id="email">
 
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..."></textarea>  
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="200"></textarea>  
 
-            <button type="submit">Enviar</button>    
+            <button type="submit" id="btnEnviar">Enviar</button>    
         </form>
     </section>
 
