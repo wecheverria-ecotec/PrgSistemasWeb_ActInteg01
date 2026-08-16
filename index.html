@@ -1,79 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración de caracteres y adaptabilidad en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Programación en Sistemas Web</title>
 
-    <!-- Google Fonts -->
+    <!-- Carga de la tipografía principal desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Hoja de estilos principal -->
+    <!-- Optimización y vinculación de la hoja de estilos CSS -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- Encabezado -->
+    <!-- ==========================================
+         1. ENCABEZADO PRINCIPAL (HEADER)
+         ========================================== -->
     <header>
         <h1 class="titulo">
-           WILMER ECHEVERRÍA
+            WILMER ECHEVERRÍA
             <span>Programador & Desarrollador Web</span>
         </h1>
     </header>
 
-    <!-- Menú de navegación -->
+    <!-- ==========================================
+         2. NAVEGACIÓN PRINCIPAL
+         ========================================== -->
     <div class="nav-bg">
-        <nav class="navegacion-principal">
+        <nav class="navegacion-principal contenedor">
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Sobre mí</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </div>
 
-    <!-- Sección Hero -->
-    <section class="hero">
-        <div class="contenido-hero">
-            <h2>Diseño y Desarrollo Web <span>Freelancer</span></h2>
-            <div class="ubicacion">
-                <p>Guayaquil - Ecuador</p>
+    <!-- ==========================================
+         3. ÁREA PRINCIPAL DE CONTENIDO (MAIN)
+         ========================================== -->
+    <main>
+        <!-- Sección Banner Principal (Hero Section) -->
+        <section class="hero">
+            <div class="contenido-hero">
+                <h2>Diseño y Desarrollo Web <!--<span>Freelancer</span>-->
+                </h2>
+                <div class="ubicacion">
+                    <p>Guayaquil - Ecuador</p>
+                </div>
+                <a class="boton" href="#contacto">Contactar</a>
             </div>
-            <a class="boton" href="#contacto">Contactar</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Formulario de contacto -->
-<!-- Formulario de contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
+        <!-- Sección del Formulario de Contacto -->
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
 
-        <!-- Espacio para el contador de clics del profesor -->
-        <div id="mainDiv" style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: bold; color: var(--primario);">
-            Por favor completa tus datos y da clic en en enviar!
-        </div>
+            <!-- Contenedor dinámico para mensajes e interacción con JS -->
+            <div id="mainDiv" style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: bold; color: var(--primario);">
+                Por favor completa tus datos y da clic en enviar.
+            </div>
 
-        <form id="formContacto">
-            <label for="nombre">Nombre:</label>
-            <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre" minlength="3" maxlength="30">
+            <!-- Formulario de interacción con validaciones HTML5 -->
+            <form id="formContacto">
+                <label for="nombre">Nombre:</label>
+                <input placeholder="Tu Nombre" required type="text" id="nombre" name="nombre" minlength="3" maxlength="30">
 
-            <label for="telefono">Teléfono:</label>    
-            <input placeholder="0999999999" type="tel" name="telefono" id="telefono" minlength="7" maxlength="10">
+                <label for="telefono">Teléfono:</label>    
+                <input placeholder="0999999999" type="tel" name="telefono" id="telefono" minlength="7" maxlength="10">
 
-            <label for="correo">Correo:</label>
-            <input placeholder="correo@ejemplo.com" required type="email" name="email" id="email">
+                <label for="correo">Correo:</label>
+                <input placeholder="correo@ejemplo.com" required type="email" name="email" id="correo">
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="200"></textarea>  
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="200"></textarea>  
 
-            <button type="submit" id="btnEnviar">Enviar</button>    
-        </form>
-    </section>
+                <button type="submit" id="btnEnviar">Enviar</button>    
+            </form>
+        </section>
+    </main>
 
+    <!-- ==========================================
+         4. PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="footer">
         <p>&copy; 2026 WILMER ECHEVERRÍA - Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Script de interacción JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
