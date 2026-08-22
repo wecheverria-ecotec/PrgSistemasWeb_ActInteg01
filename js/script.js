@@ -13,10 +13,30 @@ function buttonClicked() {
 }
 
 // ==========================================
-// 2. GESTIÓN DEL EVENTO DOM Y VALIDACIONES
+// 2. GESTIÓN DEL EVENTO DOM, NAVEGACIÓN Y VALIDACIONES
 // ==========================================
 document.addEventListener("DOMContentLoaded", function() {
     
+    // --- Manejo de Navegación Suave (Solo enlaces internos con #) ---
+    const enlacesInternos = document.querySelectorAll('a[href^="#"]');
+
+    enlacesInternos.forEach(enlace => {
+        enlace.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Validación y Envío del Formulario ---
     const formulario = document.getElementById("formContacto");
 
     if (formulario) {

@@ -1,330 +1,345 @@
 /* ==========================================
-   1. VARIABLES DE ENTORNO Y PALETA DE COLORES
+   1. VARIABLES CSS Y CONFIGURACIÓN GENERAL
    ========================================== */
 :root {
+    --primario: #0377a8;
+    --secundario: #0097a7;
+    --oscuro: #032040;
     --blanco: #ffffff;
-    --oscuro: #1e293b;        /* Azul oscuro moderno para textos e interfaces */
-    --primario: #0ea5e9;      /* Azul cian vibrante para acentos y botones */
-    --secundario: #0f172a;    /* Azul profundo para navegación y footers */
-    --fondo-suave: #f8fafc;   /* Gris claro de fondo general */
-    --sombra: rgba(0, 0, 0, 0.1); /* Sombra difuminada para tarjetas */
+    --gris-claro: #f4f4f4;
+    --celeste-brillante: #00B4DB;
+    --celeste-hover: #0083B0;
 }
 
-/* ==========================================
-   2. REINICIO DE ESTILOS Y BASE GLOBAL
-   ========================================== */
-/* Aplica el modelo de caja border-box a todos los elementos */
-* {
-    box-sizing: border-box;
-}
-
-/* Establece 1rem = 10px para facilitar el escalado tipográfico */
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-/* Configuración básica de tipografía, márgenes y color de fondo general */
-body {
-    font-family: 'Krub', sans-serif;
-    margin: 0;
-    background-color: var(--fondo-suave);
-    color: var(--oscuro);
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
-/* Contenedor genérico para centrar contenido */
-.contenedor {
-    margin: 0 auto;
-    max-width: 110rem;
-    width: 90%;
+body {
+    font-family: 'Krub', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--gris-claro);
+    color: #333333;
+    margin: 0;
+    padding: 0;
 }
 
 /* ==========================================
-   3. ENCABEZADO PRINCIPAL (HEADER)
+   2. REUTILIZABLES Y CONTENEDORES
+   ========================================== */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sombra {
+    background-color: var(--blanco);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--oscuro);
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================
+   3. ENCABEZADO (HEADER) Y NAVEGACIÓN
    ========================================== */
 header {
     background-color: var(--blanco);
-    padding: 2.5rem 0;
-    border-bottom: 2px solid #e2e8f0;
+    padding: 2rem 0;
 }
 
-h1 {
+.titulo {
     font-size: 3.2rem;
-    text-align: center;
-    color: var(--oscuro);
-    margin: 0;
     font-weight: 700;
+    margin: 0;
 }
 
-/* Subtítulo bajo el nombre */
-h1 span {
+.titulo span {
     display: block;
     font-size: 1.8rem;
     color: var(--primario);
     font-weight: 400;
-    margin-top: 0.5rem;
 }
 
-/* ==========================================
-   4. MENÚ DE NAVEGACIÓN
-   ========================================== */
-/* Franja de fondo de la barra de navegación */
 .nav-bg {
-    background-color: var(--secundario);
+    background-color: var(--oscuro);
 }
 
-/* Alineación horizontal de enlaces de navegación */
 .navegacion-principal {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 1.2rem 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
 
-/* Estilos de los botones del menú */
 .navegacion-principal a {
     color: var(--blanco);
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: bold;
-    padding: 0.8rem 1.6rem;
-    border-radius: 0.8rem;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    padding: 1rem;
+    transition: color 0.3s ease;
 }
 
-/* Efecto hover al pasar el cursor sobre las pestañas */
 .navegacion-principal a:hover {
-    background-color: var(--primario);
-    color: var(--blanco);
+    color: var(--celeste-brillante);
 }
 
 /* ==========================================
-   5. SECCIÓN PRINCIPAL (HERO)
+   4. SECCIÓN HERO (BANNER PRINCIPAL)
    ========================================== */
-/* Banner con superposición de imagen de fondo y degradado azul */
 .hero {
-    background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(14, 165, 233, 0.7)), url('../img/fondo-hero.jpg');
+    background-image: linear-gradient(rgba(3, 32, 64, 0.7), rgba(3, 32, 64, 0.7)), url('../img/fondo-hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 450px;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.contenido-hero {
     text-align: center;
     color: var(--blanco);
 }
 
 .contenido-hero h2 {
-    font-size: 3.5rem;
+    color: var(--blanco);
+    font-size: 3.6rem;
     margin-bottom: 1rem;
 }
 
-.contenido-hero span {
-    color: var(--primario);
+.imagen-perfil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--blanco);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 1rem auto;
+    display: block;
 }
 
-.ubicacion p {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-}
-
-/* ==========================================
-   6. BOTONES GENERALES Y COMPONENTES
-   ========================================== */
-/* Botón genérico (usado en el Hero) */
-.boton {
-    background-color: var(--primario);
+.descripcion-personal {
     color: var(--blanco);
-    padding: 1.2rem 3.5rem;
-    margin-top: 2rem;
-    font-size: 1.8rem;
-    text-decoration: none;
-    text-transform: uppercase;
+    max-width: 600px;
+    margin: 1rem auto;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.ubicacion {
+    font-size: 1.6rem;
     font-weight: bold;
-    border-radius: 0.8rem;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 10px var(--sombra);
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.boton:hover {
-    background-color: #0284c7;
-    transform: translateY(-2px);
-}
-
-/* ==========================================
-   7. FORMULARIO DE CONTACTO Y CONTENEDOR TIPO TARJETA
-   ========================================== */
-/* Estructura básica para la tarjeta (usado en index.html y nosotros.html) */
-.contacto {
-    background-color: var(--blanco);
-    padding: 4rem;
-    border-radius: 1.6rem;
-    max-width: 750px;
-    margin: 4rem auto;
-    box-shadow: 0 10px 25px var(--sombra);
-}
-
-.contacto h2 {
-    color: var(--oscuro);
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-}
-
-/* Textos de párrafos dentro de la tarjeta contenedora */
-.contacto p {
-    font-size: 1.8rem;
-    line-height: 1.6;
-    color: var(--oscuro);
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-/* Subtítulos secundarios dentro de la tarjeta */
-.contacto h3 {
-    font-size: 2.2rem;
-    color: var(--oscuro);
-    text-align: center;
-    margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
 
-/* Estilos de etiquetas del formulario */
-label {
-    color: var(--oscuro);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.8rem;
-    font-size: 1.5rem;
-}
-
-/* Estilos de campos de texto de entrada */
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 1.2rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 0.8rem;
-    margin-bottom: 2rem;
-    font-size: 1.6rem;
-    font-family: inherit;
-    background-color: #f8fafc;
-}
-
-/* Resaltado azul al seleccionar un campo de entrada */
-input:focus,
-textarea:focus {
-    outline: 2px solid var(--primario);
-    background-color: var(--blanco);
-}
-
-textarea {
-    height: 18rem;
-    resize: vertical;
-}
-
-/* Estilos homologados del botón Enviar del formulario */
-.contacto button[type="submit"] {
-    background-color: var(--primario);
+.boton {
+    display: inline-block;
+    background-color: var(--celeste-brillante);
     color: var(--blanco);
-    padding: 1.2rem 3.5rem;
-    font-size: 1.8rem;
-    text-transform: uppercase;
+    padding: 1rem 3rem;
+    text-decoration: none;
     font-weight: bold;
-    border-radius: 0.8rem;
-    display: block;
-    margin: 2rem auto 0 auto;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 10px var(--sombra);
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.contacto button[type="submit"]:hover {
-    background-color: #0284c7;
+.boton:hover {
+    background-color: var(--celeste-hover);
     transform: translateY(-2px);
 }
 
 /* ==========================================
-   8. COMPONENTE DE LISTA DE HABILIDADES (NOSOTROS)
+   5. SECCIÓN DE HABILIDADES (CÁPSULAS)
    ========================================== */
-/* Transforma la lista ul simple en cápsulas o badges */
-.contacto ul {
+.contenedor-subtitulo {
+    text-align: center;
+}
+
+.subtitulo-habilidades {
+    text-align: center;
+    color: var(--oscuro);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--celeste-brillante);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.lista-habilidades {
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
-.contacto ul li {
-    background-color: #e0f2fe;
-    color: #0369a1;
-    font-size: 1.5rem;
+.lista-habilidades li {
+    background-color: var(--celeste-brillante);
+    color: var(--blanco);
+    font-size: 1.8rem;
     font-weight: bold;
-    padding: 0.8rem 1.6rem;
-    border-radius: 2rem;
-    border: 1px solid #bae6fd;
+    padding: 1.2rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 180, 219, 0.3);
+    transition: all 0.3s ease;
+}
+
+.lista-habilidades li:hover {
+    background-color: var(--celeste-hover);
+    transform: translateY(-3px);
 }
 
 /* ==========================================
-   9. PIE DE PÁGINA (FOOTER) Y MULTIMEDIA
+   6. SECCIÓN DE PROYECTOS Y GRILLA
    ========================================== */
-.footer {
+.servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.servicio {
+    flex: 1 1 300px;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
     text-align: center;
-    padding: 2.5rem 0;
+}
+
+.imagen-proyecto {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    margin: 1rem 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton-proyecto {
+    display: inline-block;
     background-color: var(--secundario);
     color: var(--blanco);
-    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-proyecto:hover {
+    background-color: var(--primario);
+}
+
+/* ==========================================
+   7. FORMULARIO DE CONTACTO
+   ========================================== */
+.contacto {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mensaje-indicador {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: var(--primario);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+input, textarea {
+    padding: 1.2rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button[type="submit"] {
+    background-color: var(--celeste-brillante);
+    color: var(--blanco);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--celeste-hover);
+}
+
+/* ==========================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.footer {
+    background-color: var(--oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 0;
     margin-top: 4rem;
 }
 
-img {
-    border-radius: 12px;
-    max-width: 100%;
+.footer p {
+    margin: 0.5rem 0;
 }
 
-/* ==========================================
-   10. DISEÑO RESPONSIVO (MEDIA QUERIES)
-   ========================================== */
-/* Ajustes automáticos para pantallas móviles (menos de 768px) */
-@media (max-width: 768px) {
-    .navegacion-principal {
-        flex-direction: column; /* Apila el menú verticalmente */
-        align-items: center;
-        gap: 1rem;
-    }
+.footer .enlace-github {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
 
-    .navegacion-principal a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero {
-        height: 350px;
-        padding: 2rem;
-    }
-
-    .contenido-hero h2 {
-        font-size: 2.4rem;
-    }
-
-    .contacto {
-        padding: 2rem;
-        width: 95%;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
+.footer .enlace-github:hover {
+    color: var(--celeste-brillante); /* Color brillante para contraste óptimo */
+    text-decoration: underline;
 }

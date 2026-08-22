@@ -22,14 +22,20 @@ Este repositorio contiene el proyecto de la **Actividad Integradora 01** para la
 ## 📂 Estructura del Proyecto
 * `README.md` - Documentación del proyecto.
 * `index.html` - Página principal del sitio.
-* `nosotros.html` - Página sobre mi perfil profesional.
-* `css/styles.css` - Hoja de estilos.
-* `js/script.js` - Archivo de interacción JavaScript.
-* `img/` - Carpeta para imágenes.
-* `.gitignore` - Archivo para ignorar temporales.
+* `nosotros.html` - Página sobre mi perfil profesional, intereses y objetivos.
+* `habilidades.html` - Página con habilidades técnicas y personales.
+* `proyectos.html` - Página de proyectos destacados.
+* `css/styles.css` - Hoja de estilos principal.
+* `js/script.js` - Archivo de interacción y validación con JavaScript.
+* `img/` - Carpeta de recursos visuales y avatar.
+* `.gitignore` - Archivo para ignorar archivos temporales del editor.
 
 ---
 
 ## 🚀 Cómo ver el proyecto
 1. Descarga o clona la carpeta del repositorio.
 2. Abre el archivo `index.html` en cualquier navegador web (Chrome, Edge, Firefox).
+
+
+## 📸 Vista Previa
+![Vista previa del Portafolio](img/fondo-hero.jpg)
