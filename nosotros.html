@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración de caracteres y adaptabilidad en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mí - Wilmer Echeverría</title>
 
-    <!-- Carga de la tipografía principal desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Optimización y vinculación de la hoja de estilos CSS -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- ==========================================
-         1. ENCABEZADO PRINCIPAL (HEADER)
-         ========================================== -->
     <header>
         <h1 class="titulo">
             WILMER ECHEVERRÍA
@@ -26,9 +19,6 @@
         </h1>
     </header>
 
-    <!-- ==========================================
-         2. NAVEGACIÓN PRINCIPAL
-         ========================================== -->
     <div class="nav-bg">
         <nav class="navegacion-principal contenedor">
             <a href="index.html">Inicio</a>
@@ -39,50 +29,40 @@
         </nav>
     </div>
 
-    <!-- ==========================================
-         3. CONTENIDO PRINCIPAL (MAIN)
-         ========================================== -->
     <main class="contenedor sombra">
-        <section class="contacto">
+        <section class="seccion-nosotros">
             <h2>Sobre Mí</h2>
 
-            <!-- Avatar centrado -->
-            <div style="text-align: center;">
-                <img src="img/avatar.png" alt="Avatar de Wilmer Echeverría" class="imagen-perfil">
+            <img src="img/avatar.png" alt="Avatar de Wilmer Echeverría" class="imagen-perfil">
+
+            <div class="contenido-nosotros">
+                <h3>¿Quién soy?</h3>
+                <p>
+                    ¡Hola! Soy <strong>Wilmer Echeverría</strong>, estudiante de la carrera de Programación en Sistemas Web. Me considero una persona entusiasta, autodidacta y apasionada por la tecnología y la creación de soluciones digitales.
+                </p>
+
+                <h3>Mis Intereses:</h3>
+                <p>
+                    Me interesa profundamente el desarrollo web frontend y backend, la construcción de interfaces atractivas y adaptables a cualquier dispositivo, así como el aprendizaje constante sobre arquitecturas de software modernas y herramientas de control de versiones.
+                </p>
+
+                <h3>Mis Objetivos Académicos y Profesionales:</h3>
+                <p>
+                    Mi objetivo académico es dominar los conceptos clave del desarrollo web y la ingeniería de software para culminar mi formación con excelencia. A nivel profesional, aspiro a incorporarme a equipos de trabajo colaborativos donde pueda desarrollar aplicaciones web innovadoras, escalables y con un alto nivel de usabilidad.
+                </p>
             </div>
-
-            <!-- Párrafos descriptivos con los 3 requerimientos -->
-            <p>
-                <strong>¿Quién soy?</strong><br><br>
-                
-                ¡Hola! Soy <strong>Wilmer Echeverría</strong>, estudiante de la carrera de Programación en Sistemas Web. Me considero una persona entusiasta, autodidacta y apasionada por la tecnología y la creación de soluciones digitales.
-            </p><br>
-
-            <p>
-                <strong>Mis Intereses:</strong><br><br>
-                Me interesa profundamente el desarrollo web frontend y backend, la construcción de interfaces atractivas y adaptables a cualquier dispositivo, así como el aprendizaje constante sobre arquitecturas de software modernas y herramientas de control de versiones.
-            </p><br>
-
-            <p>
-                <strong>Mis Objetivos Académicos y Profesionales:</strong><br><br>
-                Mi objetivo académico es dominar los conceptos clave del desarrollo web y la ingeniería de software para culminar mi formación con excelencia. A nivel profesional, aspiro a incorporarme a equipos de trabajo colaborativos donde pueda desarrollar aplicaciones web innovadoras, escalables y con un alto nivel de usabilidad.
-            </p>
         </section>
     </main>
 
-    <!-- ==========================================
-         4. PIE DE PÁGINA (FOOTER)
-         ========================================== -->
-<footer class="footer">
-    <p>&copy; 2026 WILMER ECHEVERRÍA - Todos los derechos reservados.</p>
-    <p>
-        <a href="https://github.com/wecheverria-ecotec" target="_blank" rel="noopener noreferrer" class="enlace-github">
-            Ver Perfil en GitHub
-        </a>
-    </p>
-</footer>
+    <footer class="footer">
+        <p>&copy; 2026 WILMER ECHEVERRÍA - Todos los derechos reservados.</p>
+        <p>
+            <a href="https://github.com/wecheverria-ecotec" target="_blank" rel="noopener noreferrer" class="enlace-github">
+                Ver Perfil en GitHub
+            </a>
+        </p>
+    </footer>
 
-    <!-- Script de interacción JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>

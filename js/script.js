@@ -13,11 +13,19 @@ function buttonClicked() {
 }
 
 // ==========================================
-// 2. GESTIÓN DEL EVENTO DOM, NAVEGACIÓN Y VALIDACIONES
+// 2. FUNCIÓN INTERACTIVA PARA BOTONES DE PROYECTOS
+// ==========================================
+function mostrarInfoProyecto(event, nombreProyecto) {
+    if (event) event.preventDefault();
+    alert("📌 " + nombreProyecto + "\n\nEste proyecto es una muestra académica desarrollada para la asignatura. Te encuentras navegando actualmente en su versión en vivo.");
+}
+
+// ==========================================
+// 3. GESTIÓN DEL EVENTO DOM Y FORMULARIO
 // ==========================================
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- Manejo de Navegación Suave (Solo enlaces internos con #) ---
+    // --- Navegación Suave (Solo enlaces internos con #) ---
     const enlacesInternos = document.querySelectorAll('a[href^="#"]');
 
     enlacesInternos.forEach(enlace => {
@@ -36,44 +44,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // --- Validación y Envío del Formulario ---
+    // --- Validación y Envío del Formulario de Contacto ---
     const formulario = document.getElementById("formContacto");
 
     if (formulario) {
-
         formulario.addEventListener("submit", function(event) {
-            // Previene el envío inmediato para validar
             event.preventDefault();
 
-            // Captura y limpia espacios al inicio/final de las entradas
             const nombre = document.getElementById("nombre")?.value.trim();
             const telefono = document.getElementById("telefono")?.value.trim();
             const correo = document.getElementById("correo")?.value.trim();
             const mensaje = document.getElementById("mensaje")?.value.trim();
 
-            // 1. Validación de campos vacíos
             if (!nombre || !telefono || !correo || !mensaje) {
-                alert("Por favor, llena todos los campos. No se permiten entradas vacías.");
+                alert("⚠️ Por favor, llena todos los campos. No se permiten entradas vacías.");
                 return;
             }
 
-            // 2. Validación estricta de sólo letras y espacios para el Nombre
             const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
             if (!regexSoloLetras.test(nombre)) {
-                alert("El campo Nombre debe contener únicamente letras.");
+                alert("⚠️ El campo Nombre debe contener únicamente letras.");
                 return;
             }
 
-            // 3. Validación estricta de sólo números para el Teléfono
             const regexSoloNumeros = /^[0-9]+$/;
             if (!regexSoloNumeros.test(telefono)) {
-                alert("El campo Teléfono debe contener únicamente números.");
+                alert("⚠️ El campo Teléfono debe contener únicamente números.");
                 return;
             }
 
-            // Si todas las validaciones pasan con éxito:
             buttonClicked();
-            alert("¡Gracias por contactarte, " + nombre + "! Tu mensaje ha sido enviado correctamente.");
+            alert("✅ ¡Gracias por contactarte, " + nombre + "!\n\nTu mensaje ha sido enviado correctamente.");
             formulario.reset();
         });
     }

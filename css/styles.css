@@ -12,7 +12,7 @@
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -59,7 +59,7 @@ h2 {
 }
 
 /* ==========================================
-   3. ENCABEZADO (HEADER) Y NAVEGACIÓN
+   3. ENCABEZADO Y NAVEGACIÓN
    ========================================== */
 header {
     background-color: var(--blanco);
@@ -168,7 +168,7 @@ header {
 }
 
 /* ==========================================
-   5. SECCIÓN DE HABILIDADES (CÁPSULAS)
+   5. SECCIÓN DE HABILIDADES
    ========================================== */
 .contenedor-subtitulo {
     text-align: center;
@@ -340,6 +340,44 @@ button[type="submit"]:hover {
 }
 
 .footer .enlace-github:hover {
-    color: var(--celeste-brillante); /* Color brillante para contraste óptimo */
+    color: var(--celeste-brillante);
     text-decoration: underline;
+}
+
+/* ==========================================
+   9. CORRECCIONES Y JUSTIFICACIÓN
+   ========================================== */
+.seccion-nosotros {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contenido-nosotros h3 {
+    text-align: left;
+    color: var(--oscuro);
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--celeste-brillante);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.contenido-nosotros p,
+.contacto p, 
+main section p,
+.servicio p {
+    text-align: justify !important;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Centrado específico para la ubicación en el Hero */
+.hero .ubicacion,
+.hero .ubicacion p {
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
