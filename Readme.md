@@ -32,7 +32,7 @@ Este repositorio contiene el proyecto de la **Actividad Integradora 01** para la
 
 ---
 
-## 🚀 Cómo ver el proyecto
+## 🚀 Cómo ver el proyecto?
 1. Descarga o clona la carpeta del repositorio.
 2. Abre el archivo `index.html` en cualquier navegador web (Chrome, Edge, Firefox).
 
